@@ -19,12 +19,12 @@ import java.io.*;
 
 public class SolutionMenu extends JDialog {
 
-	public SolutionMenu() {
-	}
+    public SolutionMenu() {
+    }
 
-	void ShowMenu(Solution theSolution) {
-		show();
-	}
-	
+    void ShowMenu(Solution theSolution) {
+        show();
+    }
+
 }
 

@@ -12,33 +12,33 @@ import java.util.*;
  */
 
 public class ListIterator implements Iterator<Object> {
-	ArrayList<Object> theList;
-	int CurrentNumber = -1;
+    ArrayList<Object> theList;
+    int CurrentNumber = -1;
 
-	public ListIterator() {
-	}
+    public ListIterator() {
+    }
 
-	public ListIterator(ArrayList<Object> list) {
-		theList = list;
-	}
+    public ListIterator(ArrayList<Object> list) {
+        theList = list;
+    }
 
-	public boolean hasNext() {
-		if (CurrentNumber >= theList.size() - 1)
-			return false;
-		else
-			return true;
-	}
+    public boolean hasNext() {
+        if (CurrentNumber >= theList.size() - 1)
+            return false;
+        else
+            return true;
+    }
 
-	public Object next() {
-		if (hasNext() == true) {
-			CurrentNumber++;
-			return theList.get(CurrentNumber);
-		} else {
-			return null;
-		}
-	}
+    public Object next() {
+        if (hasNext() == true) {
+            CurrentNumber++;
+            return theList.get(CurrentNumber);
+        } else {
+            return null;
+        }
+    }
 
-	public void remove() {
-		theList.remove(CurrentNumber);
-	}
+    public void remove() {
+        theList.remove(CurrentNumber);
+    }
 }

@@ -12,62 +12,62 @@ import java.util.*;
  */
 
 abstract public class Person {
-	int type = 0; // type=0 : student, type=1 instructor
-	String UserName;
-	ClassCourseList CourseList;
-	CourseMenu theCourseMenu;
-	Course CurrentCourse;
-	Assignment CurrentAssignment;
+    int type = 0; // type=0 : student, type=1 instructor
+    String UserName;
+    ClassCourseList CourseList;
+    CourseMenu theCourseMenu;
+    Course CurrentCourse;
+    Assignment CurrentAssignment;
 
-	public Person() {
-		CourseList = new ClassCourseList();
-	}
+    public Person() {
+        CourseList = new ClassCourseList();
+    }
 
-	abstract public CourseMenu CreateCourseMenu(Course theCourse, int theLevel);
+    abstract public CourseMenu CreateCourseMenu(Course theCourse, int theLevel);
 
-	public void showAddButton() {
-		theCourseMenu.ShowAddButtons();
-	}
+    public void showAddButton() {
+        theCourseMenu.ShowAddButtons();
+    }
 
-	public void showViewButtons() {
-		theCourseMenu.ShowViewButtons();
-	}
+    public void showViewButtons() {
+        theCourseMenu.ShowViewButtons();
+    }
 
-	public void showComboxes() {
-		theCourseMenu.ShowComboxes();
-	}
+    public void showComboxes() {
+        theCourseMenu.ShowComboxes();
+    }
 
-	public void showRadios() {
-		theCourseMenu.ShowRadios();
-	}
+    public void showRadios() {
+        theCourseMenu.ShowRadios();
+    }
 
-	public void show() {
-		theCourseMenu.show();
-	}
+    public void show() {
+        theCourseMenu.show();
+    }
 
-	public boolean ifLogout() {
-		return theCourseMenu.ifLogout();
-	}
+    public boolean ifLogout() {
+        return theCourseMenu.ifLogout();
+    }
 
-	// show the assignment list
-	public boolean ShowMenu() {
-		// create a iterator for the assignment list
+    // show the assignment list
+    public boolean ShowMenu() {
+        // create a iterator for the assignment list
 //    Iterator theIter=new ListIterator(CurrentCourse.AssList );
-		Iterator theIter = CurrentCourse.assignmentList.iterator();
-		theCourseMenu.theCourse = CurrentCourse;
-		Assignment theAssignment;
-		while (theIter.hasNext()) {
-			theAssignment = (Assignment) theIter.next();
-			theCourseMenu.AssignmentCombox.addItem(theAssignment);
-		}
-		return false;
-	}
+        Iterator theIter = CurrentCourse.assignmentList.iterator();
+        theCourseMenu.theCourse = CurrentCourse;
+        Assignment theAssignment;
+        while (theIter.hasNext()) {
+            theAssignment = (Assignment) theIter.next();
+            theCourseMenu.AssignmentCombox.addItem(theAssignment);
+        }
+        return false;
+    }
 
-	public ClassCourseList GetCourseList() {
-		return CourseList;
-	}
+    public ClassCourseList GetCourseList() {
+        return CourseList;
+    }
 
-	public void AddCourse(Course theCourse) {
-		CourseList.add(theCourse);
-	}
+    public void AddCourse(Course theCourse) {
+        CourseList.add(theCourse);
+    }
 }
